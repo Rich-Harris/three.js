@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "build-min": "rollup -c && uglifyjs build/three.js -cm > build/three.min.js",
+    "build-min": "rollup -c && java -jar utils/build/closure-compiler/compiler.jar --js build/three.js --language_out=ES5 --compilation_level ADVANCED > build/three.min.js",
     "dev": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -46,7 +46,6 @@
     "chokidar-cli": "1.2.0",
     "jscs": "^1.13.1",
     "rollup": "^0.33.1",
-    "rollup-plugin-string": "^2.0.2",
-    "uglify-js": "^2.6.0"
+    "rollup-plugin-string": "^2.0.2"
   }
 }
